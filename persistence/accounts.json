@@ -1,0 +1,19 @@
+{
+  "accounts": [
+    {
+      "accountId": "13513",
+      "type": "chequing",
+      "balance": "631153.31",
+      "creationDate": "1354611"
+    },
+    {
+      "accountId": "13513",
+      "details": {
+        "type": "savings",
+        "creationDate": "1354611",
+        "branchId": "99999"
+      },
+      "balance": "631153.31"
+    }
+  ]
+}
