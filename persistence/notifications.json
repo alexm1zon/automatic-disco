@@ -1,0 +1,34 @@
+{
+  "notifications": [
+    {
+      "recipientAccountId": "54321",
+      "notificationId": "e757f5f3-dda8-4a21-b2e3-8b019eb89530",
+      "transactionType": "RECEIVE",
+      "timestamp": 1539277722715
+    },
+    {
+      "recipientAccountId": "54321",
+      "notificationId": "afa647d7-f04f-438e-8b61-67ecb5527ebc",
+      "transactionType": "RECEIVE",
+      "timestamp": 1539277738196
+    },
+    {
+      "recipientAccountId": "54321",
+      "notificationId": "9f59cca4-e0c1-4585-8538-1414fc424766",
+      "transactionType": "RECEIVE",
+      "timestamp": 1539277739037
+    },
+    {
+      "recipientAccountId": "54321",
+      "notificationId": "3afa99cc-6b4e-4938-a39d-96bd0fec207a",
+      "transactionType": "RECEIVE",
+      "timestamp": 1539277739690
+    },
+    {
+      "recipientAccountId": "54321",
+      "notificationId": "d96c4382-3d51-4ebc-a0a5-30e319ce85d1",
+      "transactionType": "RECEIVE",
+      "timestamp": 1539277740343
+    }
+  ]
+}

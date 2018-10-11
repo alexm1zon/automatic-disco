@@ -1,0 +1,12 @@
+{
+  "users": [
+    {
+      "accountId": "13513",
+      "accounts": ["12345", "631413", "844115"],
+      "userName": "amizon",
+      "password": "secret!",
+      "firstName": "1351",
+      "lastName": "1315"
+    }
+  ]
+}

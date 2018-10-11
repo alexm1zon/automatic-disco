@@ -1,15 +1,16 @@
-var express = require("express");
-var router = express.Router();
-var accountData = require("../persistence/accounts.json");
+const express = require("express");
+const router = express.Router();
+const accountData = require("../persistence/accounts.json");
+const accountService = require("../services/account");
 
 router.get("/:accountId", function(req, res, next) {
-  var accountId = req.params.accountId;
+  const accountId = req.params.accountId;
 
   if (!accountId) {
     return res.sendStatus(400);
   }
 
-  var accountData = accountData.accounts[0].filter(account => {
+  const accountData = accountData.accounts[0].filter(account => {
     return account.accountId == accountId;
   });
 
@@ -20,17 +21,47 @@ router.get("/:accountId", function(req, res, next) {
 });
 
 router.get("/:accountId/balance", function(req, res, next) {
-  var accountId = req.params.accountId;
+  const accountId = req.params.accountId;
 
   if (!accountId) {
     return res.sendStatus(400);
   }
 
-  var accountData = accountData.accounts.filter(account => {
-    return account.accountId == accountId;
-  });
+  const account = accountService.getAccount(accountId);
 
-  res.send(accountData[0].balance);
+  const balance = {
+    accountId,
+    balance: account.balance
+  };
+
+  res.send(balance);
+});
+
+router.post("/:accountId/transfer", function(req, res, next) {
+  const accountId = req.params.accountId;
+
+  if (!req.body) {
+    return res.sendStatus(400);
+  }
+
+  const { recipientAccountId, amount } = req.body;
+
+  if (!accountId || !recipientAccountId || !amount) {
+    return res.sendStatus(400);
+  }
+
+  const transfer = accountService.transferMoney(
+    accountId,
+    recipientAccountId,
+    amount
+  );
+
+  const result = {
+    success: "SUCCESS",
+    details: transfer
+  };
+
+  res.send(result);
 });
 
 module.exports = router;
